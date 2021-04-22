@@ -4,10 +4,13 @@ const router = express.Router()
 
 const path = require('path')
 
+const adminData = require('./admin')
+
 const rootDir = require('../util/path')
 
 router.get('/', (request, response, next) => {
-    response.sendFile(path.join(rootDir, 'views', 'shop.html'))
+    const products = adminData.products
+    response.render('shop', {prods : products, documentTitle : 'Shop'})
 })
 
 
