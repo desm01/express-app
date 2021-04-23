@@ -10,7 +10,7 @@ const rootDir = require('../util/path')
 
 router.get('/', (request, response, next) => {
     const products = adminData.products
-    response.render('shop', {prods : products, documentTitle : 'Shop'})
+    response.render('shop', {prods : products, pageTitle : 'Shop', path : '/'})
 })
 
 

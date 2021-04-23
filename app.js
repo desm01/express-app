@@ -21,7 +21,7 @@ app.use('/admin', adminData.routes)
 app.use(shopRoutes)
 
 app.use((request, response, next) => {
-    response.status(404).sendFile(path.join(__dirname, 'views', 'error.html'))
+    response.status(404).render('error', {pageTitle : 'Error, page not found'})
 })
 
 
